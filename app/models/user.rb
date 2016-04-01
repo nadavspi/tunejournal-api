@@ -1,5 +1,18 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  name            :string
+#  email           :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  password_digest :string
+#
+
 class User < ApplicationRecord
   has_many :lists, dependent: :destroy
+  has_many :tunes, dependent: :destroy
   has_many :authentication_tokens, dependent: :destroy
   before_save { self.email = email.downcase }
   validates :name, presence: true

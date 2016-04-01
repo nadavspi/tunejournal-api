@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160401054620) do
+ActiveRecord::Schema.define(version: 20160401221207) do
+
+  create_table "associations", force: :cascade do |t|
+    t.integer  "list_id"
+    t.integer  "tune_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "authentication_tokens", force: :cascade do |t|
     t.string   "body"
@@ -33,6 +40,17 @@ ActiveRecord::Schema.define(version: 20160401054620) do
   end
 
   add_index "lists", ["user_id"], name: "index_lists_on_user_id"
+
+  create_table "tunes", force: :cascade do |t|
+    t.string   "name"
+    t.string   "composer"
+    t.integer  "year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "tunes", ["user_id"], name: "index_tunes_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

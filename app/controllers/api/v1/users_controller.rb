@@ -14,6 +14,14 @@ module Api::V1
       render json: @user
     end
 
+    def currentUser
+      if current_user
+        render json: current_user
+      else
+        head :no_content
+      end
+    end
+
     # POST /v1/users
     def create
       @user = User.new(user_params)

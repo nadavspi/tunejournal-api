@@ -6,7 +6,7 @@ module Api::V1
       user = User.find_by(email: session_params[:email])
       if user && user.authenticate(session_params[:password])
         token = TokenIssuer.create_and_return_token(user, request)
-        render status: :ok, json: { user_email: user.email, auth_token: token }
+        render status: :ok, json: { email: user.email, auth_token: token }
       else
         render status: :unauthorized, json: ""
       end

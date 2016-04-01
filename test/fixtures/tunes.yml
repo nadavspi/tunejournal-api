@@ -1,20 +1,24 @@
 # == Schema Information
 #
-# Table name: lists
+# Table name: tunes
 #
 #  id         :integer          not null, primary key
 #  name       :string
-#  user_id    :integer
+#  composer   :string
+#  year       :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   name: MyString
-  user: one
+  composer: MyString
+  year: 1
 
 two:
   name: MyString
-  user: two
+  composer: MyString
+  year: 1

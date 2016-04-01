@@ -1,10 +1,10 @@
 # == Schema Information
 #
-# Table name: lists
+# Table name: associations
 #
 #  id         :integer          not null, primary key
-#  name       :string
-#  user_id    :integer
+#  list_id    :integer
+#  tune_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -12,9 +12,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  user: one
+  list_id: 1
+  tune_id: 1
 
 two:
-  name: MyString
-  user: two
+  list_id: 1
+  tune_id: 1

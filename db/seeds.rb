@@ -15,4 +15,6 @@
   User.create(user_attributes)
 end
 
-User.create(email: "admin@example.com", name: "hello", password: "password")
+user = User.create(email: "admin@example.com", name: "hello", password: "password")
+user.lists.build(name: "test list")
+user.save
