@@ -16,10 +16,20 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+CORS_ALLOW_ORIGIN  = "*"
+CORS_ALLOW_METHODS = %w{GET POST PUT OPTIONS DELETE}.join(',')
+CORS_ALLOW_HEADERS = %w{Content-Type Accept X-User-Email X-Auth-Token}.join(',')
+
 module TunejournalApi
   class Application < Rails::Application
     config.autoload_paths += %W(#{config.root}/app/services/**/)
     config.middleware.use Rack::Attack
     config.api_only = true
+
+    config.action_dispatch.default_headers = {
+      "Access-Control-Allow-Origin"  => CORS_ALLOW_ORIGIN,
+      "Access-Control-Allow-Methods" => CORS_ALLOW_METHODS,
+      "Access-Control-Allow-Headers" => CORS_ALLOW_HEADERS
+    }
   end
 end
