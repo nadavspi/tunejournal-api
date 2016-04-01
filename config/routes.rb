@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users
+  resource :sessions, only: [:create, :destroy]
 
   scope module: 'api' do
     namespace :v1 do

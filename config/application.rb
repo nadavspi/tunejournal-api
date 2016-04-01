@@ -18,6 +18,7 @@ Bundler.require(*Rails.groups)
 
 module TunejournalApi
   class Application < Rails::Application
+    config.autoload_paths += %W(#{config.root}/app/services/**/)
     config.middleware.use Rack::Attack
     config.api_only = true
   end
