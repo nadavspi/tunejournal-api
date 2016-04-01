@@ -24,6 +24,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_model_serializers (0.9.5)
+      activemodel (>= 3.2)
     activejob (5.0.0.beta3)
       activesupport (= 5.0.0.beta3)
       globalid (>= 0.3.6)
@@ -68,6 +70,8 @@ GEM
     puma (3.2.0)
     rack (2.0.0.alpha)
       json
+    rack-attack (4.4.1)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.0.beta3)
@@ -124,10 +128,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   bcrypt (~> 3.1.7)
   byebug
   listen (~> 3.0.5)
   puma
+  rack-attack
   rails (>= 5.0.0.beta3, < 5.1)
   spring
   spring-watcher-listen (~> 2.0.0)
