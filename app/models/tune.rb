@@ -15,6 +15,7 @@ class Tune < ApplicationRecord
   belongs_to :user
   has_many :associations
   has_many :lists, through: :associations
+  has_many :notes
   validates :name, presence: true
   validates :year,
             inclusion: { in: 1900..Date.today.year },
